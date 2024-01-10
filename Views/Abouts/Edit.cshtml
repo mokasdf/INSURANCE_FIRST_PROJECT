@@ -1,0 +1,122 @@
+﻿@model INSURANCE_FIRST_PROJECT.Models.About
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>About</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            
+            <div class="form-group">
+                <label asp-for="Text1" class="control-label"></label>
+                <input asp-for="Text1" class="form-control" />
+                <span asp-validation-for="Text1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text2" class="control-label"></label>
+                <input asp-for="Text2" class="form-control" />
+                <span asp-validation-for="Text2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text3" class="control-label"></label>
+                <input asp-for="Text3" class="form-control" />
+                <span asp-validation-for="Text3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text4" class="control-label"></label>
+                <input asp-for="Text4" class="form-control" />
+                <span asp-validation-for="Text4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text5" class="control-label"></label>
+                <input asp-for="Text5" class="form-control" />
+                <span asp-validation-for="Text5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text6" class="control-label"></label>
+                <input asp-for="Text6" class="form-control" />
+                <span asp-validation-for="Text6" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" hidden>
+                <label asp-for="Image1" class="control-label"></label>
+                <input asp-for="Image1" class="form-control" />
+                <span asp-validation-for="Image1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteImage1" class="control-label"></label>
+                <input asp-for="siteImage1" class="form-control" />
+                <span asp-validation-for="siteImage1" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Image2" class="control-label"></label>
+                <input asp-for="Image2" class="form-control" />
+                <span asp-validation-for="Image2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteImage2" class="control-label"></label>
+                <input asp-for="siteImage2" class="form-control" />
+                <span asp-validation-for="siteImage2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" hidden>
+                <label asp-for="Image3" class="control-label"></label>
+                <input asp-for="Image3" class="form-control" />
+                <span asp-validation-for="Image3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteImage3" class="control-label"></label>
+                <input asp-for="siteImage3" class="form-control" />
+                <span asp-validation-for="siteImage3" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Image4" class="control-label"></label>
+                <input asp-for="Image4" class="form-control" />
+                <span asp-validation-for="Image4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteImage4" class="control-label"></label>
+                <input asp-for="siteImage4" class="form-control" />
+                <span asp-validation-for="siteImage4" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Image5" class="control-label"></label>
+                <input asp-for="Image5" class="form-control" />
+                <span asp-validation-for="Image5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteImage5" class="control-label"></label>
+                <input asp-for="siteImage5" class="form-control" />
+                <span asp-validation-for="siteImage5" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Image6" class="control-label"></label>
+                <input asp-for="Image6" class="form-control" />
+                <span asp-validation-for="Image6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteImage6" class="control-label"></label>
+                <input asp-for="siteImage6" class="form-control" />
+                <span asp-validation-for="siteImage6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

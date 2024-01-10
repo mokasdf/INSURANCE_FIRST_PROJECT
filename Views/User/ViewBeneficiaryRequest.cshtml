@@ -1,0 +1,88 @@
+﻿@model INSURANCE_FIRST_PROJECT.Models.Beneficiary
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_UserLayout";
+}
+
+
+
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+
+            
+
+                                    <h1>Beneficiaries Details</h1>
+
+                                    <div>
+
+                                        <hr />
+                                        <dl class="row">
+
+                                            <dt class="col-sm-3">
+                                                @Html.DisplayNameFor(model => model.Name)
+                                            </dt>
+                                            <dd class="col-sm-9 mb-5">
+                                                @Html.DisplayFor(model => model.Name)
+                                            </dd>
+                                            <dt class="col-sm-3">
+                                                @Html.DisplayNameFor(model => model.Relationtype)
+                                            </dt>
+                                            <dd class="col-sm-9 mb-5">
+                                                @Html.DisplayFor(model => model.Relationtype)
+                                            </dd>
+                                            <dt class="col-sm-2">
+                                                @Html.DisplayNameFor(model => model.Document)
+                                            </dt>
+                                            <dd class="col-sm-10 mb-5">
+                                                <div class="person  mx-auto mb-4">
+                                                    @* <img src="~/HomeAssets/images/person_1.jpg" alt="Image" class="img-fluid rounded-circle"> *@
+                                                    <img src="@Url.Content("~/imgs/" + Model.Document )" asp-append-version="true" alt="Document" class="" width="500" height="600" />
+
+                                                </div>
+
+                                            </dd>
+                                            <dt class="col-sm-3">
+                                                @Html.DisplayNameFor(model => model.Beneficiarystartdate)
+                                            </dt>
+                                            <dd class="col-sm-9 mb-5">
+                                                @Html.DisplayFor(model => model.Beneficiarystartdate)
+                                            </dd>
+
+                                            <dt class="col-sm-2">
+                                                @Html.DisplayNameFor(model => model.State)
+                                            </dt>
+                                            <dd class="col-sm-10 mb-5">
+                                                @Html.DisplayFor(model => model.State)
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <form method="post" asp-action="ViewBeneficiaryRequest">
+
+                                            <input type="hidden" asp-for="Id" />
+
+                                            
+                                            <input type="submit" value="Delete" class="btn btn-danger" /> |
+                                            <a asp-controller="User" asp-action="ShowBeneficiaries" asp-route-subid="@Model.Subcrebtionid" class="btn btn-primary">Back</a>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

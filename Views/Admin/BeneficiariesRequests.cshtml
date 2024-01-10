@@ -1,0 +1,92 @@
+﻿
+@{
+    Layout = "_AdminLayout";
+}
+
+@model IEnumerable<INSURANCE_FIRST_PROJECT.Models.JoinTable>
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Users Beneficiaries's Requests</h4>
+                                    <p class="card-description">
+
+                                    </p>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        User
+                                                    </th>
+                                                    <th>
+                                                       Name
+                                                    </th>
+                                                    <th>
+                                                        date
+                                                    </th>
+                                                    <th>
+                                                        state
+                                                    </th>
+                                                    <th>
+                                        
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+
+                                
+                                                    <tr>
+                                                        <td class="py-1">
+                                                            @* <img src="../../images/faces/face1.jpg" alt="image"> *@
+                                                            <img src="@Url.Content("~/imgs/" + item.useraccount.Image )" asp-append-version="true" class="rounded-circle" width="200" />
+                                                        </td>
+                                                        <td>
+                                                            @item.useraccount.Fullname
+                                                        </td>
+                                                        <td>
+                                                            @item.beneficiary.Beneficiarystartdate
+                                                        </td>
+                                                        <td>
+                                                            @if (item.beneficiary.State.ToLower() == "On Hold".ToLower())
+                                                            {
+                                                                    <lable class="badge badge-warning"> @item.beneficiary.State </lable>
+                                                            }
+                                                                else if (item.beneficiary.State.ToLower() == "Accepted".ToLower())
+                                                            {
+                                                                    <lable class="badge badge-success"> @item.beneficiary.State </lable>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                    <lable class="badge badge-danger"> @item.beneficiary.State </lable>
+                                                            }
+
+                                                        </td>
+                                                            <td>
+                                                            <a asp-action="BeneficiaryRequest" asp-route-id="@item.beneficiary.Id" class="btn btn-sm btn-secondary">Details</a>
+                                                            </td>
+
+                                                    </tr>
+                                                }
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

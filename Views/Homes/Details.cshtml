@@ -1,0 +1,156 @@
+﻿@model INSURANCE_FIRST_PROJECT.Models.Home
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_AdminLayout";
+}
+<style>
+    dt{margin-bottom:30px}
+</style>
+
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+                    <h1>Details</h1>
+                    <hr/>
+                    <div>
+                        <h4>Home and about pages content</h4>
+                        
+                        <dl class="row">
+
+
+                            
+                            <dt style="align-items:center" class="col-sm-2">
+                                @* @Html.DisplayNameFor(model => model.Image1) *@
+                                Home Slider's images 
+                            </dt>
+                            <dd class="col-sm-10">
+                                @* @Html.DisplayFor(model => model.Image1) *@
+                                <img style="margin-left:30px" src="@Url.Content("~/imgs/" + Model.Image1 )" asp-append-version="true" width="100" height="100" />
+                                <img style="margin-left:30px" src="@Url.Content("~/imgs/" + Model.Image2 )" asp-append-version="true" width="100" height="100" />
+                                <img style="margin-left:30px" src="@Url.Content("~/imgs/" + Model.Image3 )" asp-append-version="true" width="100" height="100" />
+                            </dd>
+                             
+                            
+                            
+                            
+                            
+                            <dt  style="align-items:center" class="col-sm-2">
+                                @* @Html.DisplayNameFor(model => model.Image1) *@
+                                 Home About us images 
+                            </dt>
+                            <dd class="col-sm-10">
+                                @* @Html.DisplayFor(model => model.Image1) *@
+                                <img style="margin-left:30px" src="@Url.Content("~/imgs/" + Model.Image3 )" asp-append-version="true" width="100" height="100" />
+                                <img style="margin-left:30px" src="@Url.Content("~/imgs/" + Model.Image4 )" asp-append-version="true" width="100" height="100" />
+                                <img style="margin-left:30px" src="@Url.Content("~/imgs/" + Model.Image5 )" asp-append-version="true" width="100" height="100" />
+                                <img style="margin-left:30px" src="@Url.Content("~/imgs/" + Model.Image6 )" asp-append-version="true" width="100" height="100" />
+
+                            </dd>
+
+                             
+                            
+                            
+
+
+                            
+                            <dt class = "col-sm-2">
+                                @* @Html.DisplayNameFor(model => model.Text1) *@
+                                About us paragraph one
+                            </dt>
+                            <dd class = "col-sm-10">
+                                @Html.DisplayFor(model => model.Text1)
+                            </dd>
+
+                            
+
+                            <dt class = "col-sm-2">
+                                @* @Html.DisplayNameFor(model => model.Text2) *@
+                                About us paragraph two
+                            </dt>
+
+                            <dd class = "col-sm-10">
+                                @Html.DisplayFor(model => model.Text2)
+                                
+                            </dd>
+                            
+                            <dt class = "col-sm-2">
+                                @* @Html.DisplayNameFor(model => model.Text3) *@
+                                About us Why chose us paragraph one
+                            </dt>
+                            <dd class = "col-sm-10">
+                                @Html.DisplayFor(model => model.Text3)
+                                
+                            </dd>
+                            
+                            <dt class = "col-sm-2">
+                                @* @Html.DisplayNameFor(model => model.Text4) *@
+                                About us Why chose us paragraph two
+                                
+                            </dt>
+                            <dd class = "col-sm-10">
+                                @Html.DisplayFor(model => model.Text4)
+                            </dd>
+                            
+                            <dt class = "col-sm-2">
+                                @* @Html.DisplayNameFor(model => model.Text5) *@
+                                About us Our vision
+                                
+                            </dt>
+                            <dd class = "col-sm-10">
+                                @Html.DisplayFor(model => model.Text5)
+                            </dd>
+                             
+                            
+
+                            <dt class = "col-sm-2">
+                                @* @Html.DisplayNameFor(model => model.Text6) *@
+                                About us Our mission
+                            </dt>
+                            <dd class = "col-sm-10">
+                                @Html.DisplayFor(model => model.Text6)
+                            </dd>
+
+                            
+                            
+                            <dt class = "col-sm-2">
+                                @Html.DisplayNameFor(model => model.Text7)
+                            </dt>
+                            <dd class = "col-sm-10">
+                                @Html.DisplayFor(model => model.Text7)
+                            </dd>
+                            
+                            
+                        </dl>
+                    </div>
+                    <div>
+                        <a class="btn btn-warning " asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

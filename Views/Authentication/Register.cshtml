@@ -1,0 +1,352 @@
+﻿@model INSURANCE_FIRST_PROJECT.Models.Useraccount
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/AuthAssets/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/AuthAssets/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/AuthAssets/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/AuthAssets/css/style.css">
+
+    <title>Sign Up #3</title>
+
+    <style>
+        /* Style for the scroll link */
+        .scroll-link {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .custom-input {
+            display: none; /* Hide the default file input */
+        }
+
+        .custom-label {
+            /* background-color: #0077b6; */ /* Button background color */
+            color: #fff; /* Text color */
+            padding: 12px; /* Padding for better styling */
+            /* border: 1px solid #0077b6; */ /* Border for button */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            margin-bottom: 0px;
+        }
+
+            .custom-label:hover {
+                /* background-color: #005a91; */ /* Change background color on hover */
+            }
+
+        .file-name-display {
+            /* margin-top: 10px; */ /* Add spacing below the file input button */
+            /*  border: 1px solid #ccc; */ /* Add a border to the text input */
+            padding: 4px; /* Add padding to the text input */
+            width: 100%; /* Expand to fill the container's width */
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="half">
+        <div class="bg order-1 order-md-2" style="background-image: url('/AuthAssets/images/bg_1.jpg');"></div>
+        <div class="contents order-2 order-md-1" style="padding-top:100px;">
+
+            <div class="container" >
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-block" style="box-shadow:100px;">
+                            @* style="margin-top:100px;" *@
+                            <div class="text-center mb-5">
+                                <h3>Register</h3>
+
+                            </div>
+                            <form method="post" asp-action="Register" enctype="multipart/form-data">
+                                <div class="form-group first">
+                                    @* <label for="name">Name</label>
+                                    <input type="text" class="form-control" placeholder="Name" id="name"> *@
+                                    <label asp-for="Fullname" class="control-label"></label>
+                                    <input asp-for="Fullname" class="form-control" placeholder="" required />
+                                    <span asp-validation-for="Fullname" class="text-danger"></span>
+                                </div>
+                                <div class="form-group first">
+                                    @* <label for="username">Email Address</label>
+                                    <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username"> *@
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control" required />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    @* <label for="password">Password</label>
+                                    <input type="password" class="form-control" placeholder="Your Password" id="password"> *@
+                                    <label asp-for="Password" class="control-label"></label>
+                                    <input type="password" asp-for="Password" class="form-control" required />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group ">
+                                    @* <label for="re-password">Re-type Password</label>
+                                    <input type="password" class="form-control" placeholder="Re-type Your Password" id="re-password"> *@
+                                    <label for="rePassword" class="control-label">Re-type Password</label>
+                                    <input type="password" for="rePassword" name="rePassword" id="rePassword" class="form-control" required />
+                                    
+                                </div>
+
+                                <div class="form-group last mb-3" hidden>
+                                    <label asp-for="UserImageFile" class="control-label"></label>
+                                    <input asp-for="UserImageFile" class="form-control" />
+                                    <span asp-validation-for="UserImageFile" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label"> User Image</label>
+                                    <div style="display:flex">
+                                        <input asp-for="UserImageFile" name="UserImageFile" type="file" id="customFileInput" class="custom-input form-control" accept=".jpg, .jpeg, .png" hidden>
+                                        <input for="chosenFileName" name="chosenFileName" type="text" id="chosenFileName" class="file-name-display form-control" readonly>
+                                        <label asp-for="UserImageFile" class="custom-label btn btn-primary">Uppload</label>
+
+                                    </div>
+                                </div>
+                                <p style="color:red">@ViewBag.Error</p>
+
+                                <div class="d-sm-flex mb-5 align-items-center">
+                                    <label class="control control--checkbox mb-3 mb-sm-0">
+                                        <span class="caption">Agree our <a href="#">Terms and Conditions</a></span>
+                                        <input type="checkbox"  required />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <span class="ml-auto"><a asp-controller="Authentication" asp-action="Login" class="forgot-pass">Have an account? Login</a></span>
+                                </div>
+
+                                <input type="submit" value="Register" class="btn btn-block btn-primary">
+                                
+
+                            </form>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+     
+
+    <script src="~/AuthAssets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/AuthAssets/js/popper.min.js"></script>
+    <script src="~/AuthAssets/js/bootstrap.min.js"></script>
+    <script src="~/AuthAssets/js/main.js"></script>
+
+    <script>
+        document.getElementById("customFileInput").addEventListener("change", function () {
+            const input = this;
+            const label = document.querySelector(".custom-label");
+            const fileNameDisplay = document.getElementById("chosenFileName");
+
+            if (input.files.length > 0) {
+                fileNameDisplay.value = input.files[0].name;
+            } else {
+                fileNameDisplay.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+@* 
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/HomeAssets/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/HomeAssets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/animate.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+
+
+
+    <link rel="stylesheet" href="~/HomeAssets/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="~/HomeAssets/css/aos.css">
+
+    <link rel="stylesheet" href="~/HomeAssets/css/style.css">
+
+</head>
+<body> *@
+
+@* 
+    <div class="py-5 bg-light" id="contactussection">
+        <div class="container">
+
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <h2 class="site-section-heading text-center text-uppercase">Contact US</h2>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-12 col-lg-8 mb-5">
+<h4>Useraccount</h4>
+<hr />
+<div class="row">
+        
+    <div class="col-md-4">
+            <form asp-action="Register" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Fullname" class="control-label"></label>
+                    <input asp-for="Fullname" class="form-control" />
+                    <span asp-validation-for="Fullname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+               
+                <div class="form-group">
+                    <label asp-for="UserImageFile" class="control-label"></label>
+                    <input asp-for="UserImageFile" class="form-control" />
+                    <span asp-validation-for="UserImageFile" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Extra" class="control-label"></label>
+                    <input asp-for="Extra" class="form-control" />
+                    <span asp-validation-for="Extra" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Roleid" class="control-label"></label>
+                    <select asp-for="Roleid" class="form-control" asp-items="ViewBag.Roleid"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Register" class="btn btn-primary" />
+                </div>
+            </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div> *@
+@* 
+    <div class="py-5 bg-light" id="contactussection">
+        <div class="container">
+
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <h2 class="site-section-heading text-center text-uppercase">Register now</h2>
+                </div>
+            </div>
+            <div class="row" style="display:flex; justify-content:center; ">
+
+                <div class="col-md-12 col-lg-8 mb-5 bg-white" style="padding-top:20px;">
+
+
+
+                    <form asp-action="Register" enctype="multipart/form-data">
+
+                        <div class="row form-group">
+                            <div class="col-md-12 mb-3 mb-md-0">
+                                <label asp-for="Fullname" class="control-label"></label>
+                                <input asp-for="Fullname" class="form-control" />
+                                <span asp-validation-for="Fullname" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="row form-group">
+                            <div class="col-md-12 mb-3 mb-md-0">
+                                <label asp-for="Password" class="control-label"></label>
+                                <input asp-for="Password" class="form-control" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label asp-for="UserImageFile" class="control-label"></label>
+                                <input asp-for="UserImageFile" class="form-control" />
+                                <span asp-validation-for="UserImageFile" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="Register" class="btn btn-primary text-white px-4 py-2" />
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="~/HomeAssets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/HomeAssets/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/HomeAssets/js/jquery-ui.js"></script>
+    <script src="~/HomeAssets/js/popper.min.js"></script>
+    <script src="~/HomeAssets/js/bootstrap.min.js"></script>
+    <script src="~/HomeAssets/js/owl.carousel.min.js"></script>
+    <script src="~/HomeAssets/js/jquery.stellar.min.js"></script>
+    <script src="~/HomeAssets/js/jquery.countdown.min.js"></script>
+    <script src="~/HomeAssets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/HomeAssets/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/HomeAssets/js/aos.js"></script>
+
+    <script src="~/HomeAssets/js/main.js"></script>
+
+</body>
+ </html>   *@

@@ -1,0 +1,149 @@
+﻿@model INSURANCE_FIRST_PROJECT.Models.Testimonial
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_UserLayout";
+}
+
+
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <div class=" block-14 bg nav-direction-white">
+
+                                        <div class="container">
+
+                                            <div class="row mb-1">
+                                                <div class="col-md-12">
+                                                    <h3 class="site-section-heading text-center text-uppercase">@Model.Useraccount.Fullname 's Testimonie</h3>
+                                                </div>
+                                            </div>
+
+                                            <div class="nonloop-block-14 owl-carousel">
+
+                                                <div class="p-2">
+                                                    <div class="d-block block-testimony w-75 mx-auto text-center">
+                                                        <div class="person w-25 mx-auto mb-4">
+                                                            @* <img src="~/HomeAssets/images/person_1.jpg" alt="Image" class="img-fluid rounded-circle"> *@
+                                                            <img src="@Url.Content("~/imgs/" + Model.Useraccount.Image )" asp-append-version="true" alt="Image" class="img-fluid rounded-circle" />
+
+                                                        </div>
+                                                        <div>
+                                                            <h2 class="h5 mb-4">@Model.Useraccount.Fullname</h2>
+                                                            <blockquote>&ldquo; @Model.Message  &rdquo;</blockquote>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+
+
+
+
+
+
+                                    <h1>Details</h1>
+
+                                    <div>
+                                        <h4>Testimonial</h4>
+                                        <hr />
+                                        <dl class="row">
+                                            <dt class="col-sm-2">
+                                                @Html.DisplayNameFor(model => model.Testimonialdate)
+                                            </dt>
+                                            <dd class="col-sm-10">
+                                                @Html.DisplayFor(model => model.Testimonialdate)
+                                            </dd>
+                                            <dt class="col-sm-2">
+                                                @Html.DisplayNameFor(model => model.State)
+                                            </dt>
+                                            <dd class="col-sm-10">
+                                                @Html.DisplayFor(model => model.State)
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        @* <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> | *@
+                                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Back to List</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+@*
+
+<div class="content-wrapper">
+    <div class="container">
+        <div class="main-body">
+            <div class="row gutters-sm">
+                <div class="col-md-12 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h1>Details</h1>
+
+                            <div>
+                                <h4>Testimonial</h4>
+                                <hr />
+                                <dl class="row">
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.State)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.State)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Message)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Message)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Testimonialdate)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Testimonialdate)
+                                    </dd>
+                                    @* <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Extra)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Extra)
+                                    </dd> 
+
+                                </dl>
+                            </div>
+                            <div>
+                                 <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> | 
+                                <a asp-controller="Home" asp-action="Index">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@

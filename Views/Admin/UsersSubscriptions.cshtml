@@ -1,0 +1,106 @@
+﻿@{
+
+    Layout = "_AdminLayout";
+}
+
+@section head{
+   
+}
+@model IEnumerable<INSURANCE_FIRST_PROJECT.Models.Subcrebtion>
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+
+                    @* search betwheen two dates in subcretion table *@
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Subscribtions</h4>
+                                    <p class="card-description">
+                                        Search Betwheen dates
+                                    </p>
+                                    <form asp-action="UsersSubscriptions" method="post" class="form-inline">
+                                        <label class="sr-only" for="startDate">Start Date</label>
+                                        <input type="date" class="form-control mb-2 mr-sm-2" id="startDate" name="startDate" placeholder="Start Date">
+
+                                        <label class="sr-only" for="endtDate">End Date</label>
+                                        <input type="date" class="form-control mb-2 mr-sm-2" id="endtDate" name="endDate" placeholder="End Date">
+
+
+                                        <button type="submit" class="btn btn-secondary mb-2">Search</button>
+                                    </form>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        User
+                                                    </th>
+                                                    <th>
+                                                        Full name
+                                                    </th>
+                                                    
+                                                    <th>
+                                                        Subscrtion Date
+                                                    </th>
+
+                                                    <th>
+                                                        Subscrition state
+                                                    </th>
+                                                    <th>
+                                                        Nuber of beneficiryies
+                                                    </th>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+
+                                                    <tr>
+                                                        <td class="py-1">
+                                                            @* <img src="../../images/faces/face1.jpg" alt="image"> *@
+                                                            <img src="@Url.Content("~/imgs/" + item.Useraccount.Image )" asp-append-version="true" class="rounded-circle" width="200" />
+
+                                                        </td>
+                                                        <td>
+                                                            @item.Useraccount.Fullname
+                                                        </td>
+                                                        
+                                                        <td>
+                                                            @item.Subcrebtiondate
+                                                        </td>
+                                                        <td>
+                                                            @item.State
+                                                        </td>
+                                                        <td>
+                                                            @item.Beneficiaries.Count
+                                                        </td>
+                                                        <td>
+                                                            <a asp-action="Userdetails" asp-route-id="@item.Useraccountid" class="btn btn-sm btn-secondary">Details</a>
+                                                        </td>
+                                                    </tr>
+                                                }
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

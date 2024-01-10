@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    //Layout = "_HomeLayout";
+    var selectedLayout = ViewBag.layout;
+}
+@if (selectedLayout == "userlayout")
+{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+else
+{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml"; // Default layout
+}
+@section head{
+    <style>
+        /* #founderImage {
+
+                    background-image: url("/wwwroot/hero_bg_1.jpg");
+                    background-attachment: fixed;
+                } */
+    </style>
+}
+
+@* @model INSURANCE_FIRST_PROJECT.Models.Home *@
+@model  INSURANCE_FIRST_PROJECT.Models.Contactu
+
+
+
+
+<div class="site-blocks-cover inner-page overlay" style="background-image: url('/imgs/@Model.Image1');" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-7 text-center" data-aos="fade">
+            <h1 class="text-uppercase">Contact Us</h1>
+            <span class="caption d-block text-white">An Insurance Company</span>
+        </div>
+    </div>
+</div>
+
+<div class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-lg-8 mb-5">
+
+
+
+                <form class="p-5 bg-white" method="post" asp-action="contact" enctype="multipart/form-data">
+
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" asp-for="Fullname">Full Name</label>
+                            <input type="text" name="Fullname" asp-for="Fullname" id="Fullname" class="form-control" placeholder="Full Name" >
+                            
+                           
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="font-weight-bold" asp-for="Email">Email</label>
+                            <input asp-for="Email" name="Email" type="email" id="Email" class="form-control" placeholder="Email Address">
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" asp-for="Phonenumber">Phone</label>
+                            <input asp-for="Phonenumber" name="Phonenumber" type="text" id="Phonenumber" class="form-control" placeholder="Phone #">
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="font-weight-bold" id="Text1" asp-for="Text1">Message</label>
+                            <textarea asp-for="Text1" name="Text1" id="Text1" cols="30" rows="5" class="form-control" placeholder="Say hello to us"></textarea>
+                            
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <input type="submit" value="Send Message" class="btn btn-primary text-white px-4 py-2">
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="p-4 mb-3 bg-white">
+                    <h3 class="h5 text-black mb-3">Contact Info</h3>
+                    <p class="mb-0 font-weight-bold">Address</p>
+                    <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+
+                    <p class="mb-0 font-weight-bold">Phone</p>
+                    <p class="mb-4"><a href="#">@Model.Phonenumber </a></p>
+
+                    <p class="mb-0 font-weight-bold">Email Address</p>
+                    <p class="mb-0"><a href="#">@Model.Email </a></p>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="py-2 bg-primary">
+</div>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<INSURANCE_FIRST_PROJECT.Models.Subcrebtiontype>
+@{
+    ViewData["Title"] = "INSURANCES";
+    // Layout = "_HomeLayout";
+    var selectedLayout =ViewBag.layout;
+}
+@if (selectedLayout == "userlayout")
+{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+else
+{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml"; // Default layout
+}
+
+
+
+
+
+<div class="site-wrap">
+    @foreach(var item in Model){
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                        <p class="mb-5"><img src="@Url.Content("~/imgs/" + item.Image )" alt="Image" class="img-fluid" /></p>
+                </div>
+                <div class="col-lg-5 ml-auto">
+                    <h2 class="site-section-heading mb-3 font-secondary text-uppercase">@item.Name</h2>
+                        <p class="mb-5">@item.Text2 </p>
+                        <p class="mb-5">Only for $@item.Price </p>
+
+                        <a asp-controller="User" asp-action="SubscribePage" asp-route-subid=@item?.Id class="btn btn-outline-primary py-2 px-4">Insured Yours Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+
+@* <img src="images/img_1.jpg" alt="Image" class="img-fluid"> *@

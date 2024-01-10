@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>@ViewBag.Title</title>
+    @* <title>Funder &mdash; Colorlib Website Template</title> *@
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+
+
+    <link rel="stylesheet" href="~/DashbordAssets/css/vertical-layout-light/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/HomeAssets/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/HomeAssets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/HomeAssets/css/animate.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+
+
+
+    <link rel="stylesheet" href="~/HomeAssets/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="~/HomeAssets/css/aos.css">
+
+    <link rel="stylesheet" href="~/HomeAssets/css/style.css">
+    <link rel="stylesheet" href="~/DashbordAssets/vendors/typicons.font/font/typicons.css">
+    
+    
+    <style>
+        /* Style for the scroll link */
+        .scroll-link {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        .custom-input {
+            display: none; /* Hide the default file input */
+        }
+
+        .custom-label {
+            /* background-color: #0077b6; */ /* Button background color */
+            color: #fff; /* Text color */
+            padding: 12px; /* Padding for better styling */
+            /* border: 1px solid #0077b6; */ /* Border for button */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            margin-bottom:0px;
+        }
+
+            .custom-label:hover {
+                /* background-color: #005a91; */ /* Change background color on hover */
+            }
+
+        .file-name-display {
+            /* margin-top: 10px; */ /* Add spacing below the file input button */
+            /*  border: 1px solid #ccc; */ /* Add a border to the text input */
+            padding: 4px; /* Add padding to the text input */
+            width: 100%; /* Expand to fill the container's width */
+        }
+
+    </style>
+    @* for the payment *@
+    @RenderSection("head", required: false)
+
+    @* end for the payment *@
+    
+</head>
+<body style="background-image:url('/HomeAssets/images/bg.jpg')">
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div> <!-- .site-mobile-menu -->
+
+
+        <div class="site-navbar-wrap js-site-navbar bg-white">
+
+            <div class="container">
+                <div class="site-navbar bg-light">
+                    <div class="row align-items-center">
+                        <div class="col-2">
+                            <h2 class="mb-0 site-logo"><a asp-controller="Home" asp-action="Index" class="font-weight-bold">FUNDER</a></h2>
+                        </div>
+                        <div class="col-10">
+                            <nav class="site-navigation text-right" role="navigation">
+                                <div class="container">
+                                    <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="~/HomeAssets/#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+                                    <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                        <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                        <li class="has-children">
+                                            <a asp-controller="Home" asp-action="Insurance">Insurance</a>
+                                            <ul class="dropdown arrow-top">
+                                                <li><a href="#">Home Insurance</a></li>
+                                                <li><a href="#">Auto Insurance</a></li>
+                                                <li><a href="#">Travel Insurance</a></li>
+                                                <li class="has-children">
+                                                    <a href="~/HomeAssets/#">Sub Menus</a>
+                                                    <ul class="dropdown">
+                                                        <li><a href="#">Home Insurance</a></li>
+                                                        <li><a href="#">Auto Insurance</a></li>
+                                                        <li><a href="#">Travel Insurance</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        @* <li><a href="~/HomeAssets/services.html">Services</a></li>
+                                        <li><a href="~/HomeAssets/blog.html">Blog</a></li> *@
+                                        <li><a asp-controller="Home" asp-action="Index" asp-fragment="Aboutsection">About</a></li>
+
+                                        <li><a asp-controller="Home" asp-action="contact" >Contact</a></li>
+                                        @* <li class="has-children">
+                                            <i class="typcn typcn-user-outline mr-0"></i>
+                                            
+                                            <ul class="dropdown arrow-top">
+                                                <li><a href="~/HomeAssets/#"> <i class="typcn typcn-user-outline mr-0 text-primary"></i>Profile</a></li>
+                                                <li><a href="~/HomeAssets/#">Subs</a></li>
+                                                <li><a href="~/HomeAssets/#"> <i class="typcn typcn-power text-primary"></i>Logout</a></li>
+                                         
+                                            </ul>
+                                        </li> *@
+                                        <li class="nav-item nav-profile dropdown">
+                                            <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
+                                                <i class="typcn typcn-user-outline mr-0 icon-ms text-primary"></i><span class="nav-profile-name">@ViewBag.UserName</span>
+                                                
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                                                <a class="dropdown-item" asp-controller="User" asp-action="Profile" asp-route-id=@ViewBag.UserId>
+
+                                                    <i class="typcn typcn-user-outline mr-0 text-primary icon-md"></i>@* <i class="typcn typcn-cog text-primary"></i> *@
+                                                    Profile
+
+                                                </a>
+                                                <a class="dropdown-item" asp-controller="User" asp-action="ViewAllSubscrebtion" asp-route-id=@ViewBag.UserId>
+                                                    <i class="typcn typcn-folder  text-primary icon-md"></i>
+                                                    Subs
+                                                </a>
+                                                <a class="dropdown-item" asp-controller="User" asp-action="Testimonial" asp-route-id=@ViewBag.UserId>
+                                                    <i class="typcn typcn-printer  text-primary icon-md"></i>
+                                                   Testimonial
+                                                </a>
+                                                <a class="dropdown-item" asp-controller="User" asp-action="Logout">
+                                                    <i class="typcn typcn-power text-primary icon-md"></i>
+                                                    Logout
+                                                </a>
+                                            </div>
+
+                                        </li>
+                                        
+                                        <li hidden>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn btn-primary dropdown-toggle" id="dropdownMenuIconButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="typcn typcn-user-outline mr-0"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton5" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 47px, 0px);">
+                                                    <h6 class="dropdown-header">Settings</h6>
+                                                    <a class="dropdown-item" href="#"><i class="typcn typcn-user-outline mr-0 text-primary icon-md"></i>Profile</a>
+                                                    <a class="dropdown-item" href="#"><i class="typcn typcn-power text-primary icon-md"></i>Subs</a>
+                                                    
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" asp-controller="User" asp-action="Logout"><i class="typcn typcn-power text-primary icon-md"></i>Logout</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            @RenderBody()
+        </div>
+
+
+        <footer class="site-footer">
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3 class="footer-heading mb-4 text-white">About</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
+                        <p><a href="#" class="btn btn-primary rounded text-white px-4">Read More</a></p>
+                    </div>
+                    <div class="col-md-5 ml-auto">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a asp-controller="User" asp-action="Index" asp-fragment="Aboutsection">About</a></li>
+                                    <li><a asp-controller="User" asp-action="INSSURANCE">Insurance</a></li>
+
+                                    <li><a asp-controller="User" asp-action="Index" asp-fragment="contactussection">Contacts</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="footer-heading mb-4 text-white">Insurance</h3>
+                                <ul class="list-unstyled">
+                                    <li><a asp-controller="User" asp-action="INSSURANCE">Home Insurance</a></li>
+                                    <li><a asp-controller="User" asp-action="INSSURANCE">Auto Insurance</a></li>
+                                    <li><a asp-controller="User" asp-action="INSSURANCE">Travel Insurance</a></li>
+                                    <li><a asp-controller="User" asp-action="INSSURANCE">Business Insurance</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-2">
+                        <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+                        <div class="col-md-12">
+                            <p>
+                                <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
+                                <a href="#" class="p-2"><span class="icon-twitter"></span></a>
+                                <a href="#" class="p-2"><span class="icon-instagram"></span></a>
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-5 mt-5 text-center">
+                    <div class="col-md-12">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; <script>document.write(new Date().getFullYear());</script> All Rights Reserved | made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="~/HomeAssets/https://colorlib.com" target="_blank">Mhammad Khabour</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+
+    </div>
+
+
+
+    <script src="~/HomeAssets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/HomeAssets/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/HomeAssets/js/jquery-ui.js"></script>
+    <script src="~/HomeAssets/js/popper.min.js"></script>
+    <script src="~/HomeAssets/js/bootstrap.min.js"></script>
+    <script src="~/HomeAssets/js/owl.carousel.min.js"></script>
+    <script src="~/HomeAssets/js/jquery.stellar.min.js"></script>
+    <script src="~/HomeAssets/js/jquery.countdown.min.js"></script>
+    <script src="~/HomeAssets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/HomeAssets/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/HomeAssets/js/aos.js"></script>
+
+    <script src="~/HomeAssets/js/main.js"></script>
+
+    <script>
+        // JavaScript for smooth scrolling
+        document.querySelectorAll('.scroll-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1); // Remove the '#' symbol
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    window.scrollTo({
+                        behavior: 'smooth',
+                        top: targetSection.offsetTop,
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        document.getElementById("customFileInput").addEventListener("change", function () {
+            const input = this;
+            const label = document.querySelector(".custom-label");
+            const fileNameDisplay = document.getElementById("chosenFileName");
+
+            if (input.files.length > 0) {
+                fileNameDisplay.value = input.files[0].name;
+            } else {
+                fileNameDisplay.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
+

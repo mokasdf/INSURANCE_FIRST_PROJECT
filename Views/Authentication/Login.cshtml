@@ -1,0 +1,97 @@
+﻿@model INSURANCE_FIRST_PROJECT.Models.Useraccount
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/AuthAssets/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/AuthAssets/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/AuthAssets/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/AuthAssets/css/style.css">
+
+    <title>Sign Up #3</title>
+</head>
+<body>
+
+
+    <div class="half">
+        <div class="bg order-1 order-md-2" style="background-image: url('/AuthAssets/images/bg_1.jpg');"></div>
+        <div class="contents order-2 order-md-1" style="">
+
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-block" style="box-shadow:100px;">
+                            @* style="margin-top:100px;" *@
+                            <div class="text-center mb-5">
+                                <h3>Login</h3>
+
+                            </div>
+                            <form method="post" asp-action="Login" enctype="multipart/form-data">
+                                
+                                <div class="form-group first">
+                                    @* <label for="username">Email Address</label>
+                                    <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username"> *@
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control"  value="@ViewBag.Email" required  />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group  last mb-3">
+                                    @* <label for="password">Password</label>
+                                    <input type="password" class="form-control" placeholder="Your Password" id="password"> *@
+                                    <label asp-for="Password" class="control-label"></label>
+                                    <input type="password" asp-for="Password" class="form-control" required />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                
+                                <p style="color:red">@ViewBag.Error</p>
+                                
+
+                                <div class="d-sm-flex mb-5 align-items-center">
+                                     <label class="control control--checkbox mb-3 mb-sm-0">
+                                        <span class="caption"><a href="#">Keep me signed in</a></span>
+                                        <input type="checkbox" checked="checked"  />
+                                        <div class="control__indicator"></div> 
+                                    </label> 
+                                    <span class="ml-auto"><a asp-controller="" asp-action="" class="forgot-pass">Forget password?</a></span>
+
+                                </div>
+
+                                <input type="submit" value="Login" class="btn btn-block btn-primary mb-3">
+                                <br />
+                                <span style="text-align:center" class="ml-auto"><a asp-controller="Authentication" asp-action="Register" class="forgot-pass">Don't Have an account? Register</a></span>
+
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="~/AuthAssets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/AuthAssets/js/popper.min.js"></script>
+    <script src="~/AuthAssets/js/bootstrap.min.js"></script>
+    <script src="~/AuthAssets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿@model INSURANCE_FIRST_PROJECT.Models.Testimonial
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_AdminLayout";
+}
+
+
+
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <div class=" block-14 bg nav-direction-white">
+
+                                        <div class="container">
+
+                                            <div class="row mb-1">
+                                                <div class="col-md-12">
+                                                    <h3 class="site-section-heading text-center text-uppercase">@Model.Useraccount.Fullname 's Testimonie</h3>
+                                                </div>
+                                            </div>
+
+                                            <div class="nonloop-block-14 owl-carousel">
+
+                                                <div class="p-2">
+                                                    <div class="d-block block-testimony w-75 mx-auto text-center">
+                                                        <div class="person w-25 mx-auto mb-4">
+                                                            @* <img src="~/HomeAssets/images/person_1.jpg" alt="Image" class="img-fluid rounded-circle"> *@
+                                                            <img src="@Url.Content("~/imgs/" + Model.Useraccount.Image )" asp-append-version="true" alt="Image" class="img-fluid rounded-circle" />
+
+                                                        </div>
+                                                        <div>
+                                                            <h2 class="h5 mb-4">@Model.Useraccount.Fullname</h2>
+                                                            <blockquote>&ldquo; @Model.Message  &rdquo;</blockquote>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+
+
+
+
+
+
+                                    <h1>Details</h1>
+
+                                    <div>
+                                        <h4>Testimonial</h4>
+                                        <hr />
+                                        <dl class="row">
+                                            <dt class="col-sm-2">
+                                                @Html.DisplayNameFor(model => model.Testimonialdate)
+                                            </dt>
+                                            <dd class="col-sm-10">
+                                                @Html.DisplayFor(model => model.Testimonialdate)
+                                            </dd>
+                                            <dt class="col-sm-2">
+                                                @Html.DisplayNameFor(model => model.State)
+                                            </dt>
+                                            <dd class="col-sm-10">
+                                                @Html.DisplayFor(model => model.State)
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <form method="post" asp-action="UserTestimonial">
+                                            <input type="hidden" asp-for="Id" value="@Model.Id" />
+                                            <input type="hidden" asp-for="Testimonialdate" value="@Model.Testimonialdate" />
+                                            <input type="hidden" asp-for="Message" value="@Model.Message  " />
+                                            <input type="hidden" asp-for="Useraccountid" value="@Model.Useraccountid  " />
+                                            <label for="state">Choose a state:</label>
+                                            <select id="state" name="state" class="btn btn-light dropdown-toggle">
+                                                <option value="On hold">On hold</option>
+                                                <option value="Accepted">Accepted </option>
+                                                <option value="Rejected">Rejected </option>
+                                                
+                                            </select>
+
+
+                                            <br>
+                                            <hr />
+                                            <input type="submit" value="Edit" class="btn btn-warning" /> |
+                                            <a asp-action="UserTestimonials" class="btn btn-danger">Back</a>
+                                        </form>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

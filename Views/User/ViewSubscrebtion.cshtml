@@ -1,0 +1,67 @@
+﻿@model INSURANCE_FIRST_PROJECT.Models.Subcrebtion
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_UserLayout";
+}
+
+<div class="content-wrapper">
+    <div class="container">
+        <div class="main-body">
+            <div class="row gutters-sm">
+                <div class="col-md-12 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+
+
+                            <h1>Details</h1>
+
+                            <div>
+                                <h4>Subcrebtion</h4>
+                                <hr />
+                                <dl class="row">
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Subcrebtiondate)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Subcrebtiondate)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.State)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.State)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Extra)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Extra)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Subcrebtiontype)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Subcrebtiontype.Name)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Useraccount.Fullname)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Useraccount.Fullname)
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div>
+                                <a asp-controller="User" asp-action="DeleteSubscrebtion" asp-route-id="@Model?.Id">Delet Subcrebtion</a> |
+                                <a asp-controller="Home" asp-action="Index">Go Back</a>|
+                                <a asp-action="ShowBeneficiaries" asp-route-subid="@Model?.Id">Show benefi</a> 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

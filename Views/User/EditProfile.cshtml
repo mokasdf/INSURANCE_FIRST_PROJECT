@@ -1,0 +1,64 @@
+﻿@model INSURANCE_FIRST_PROJECT.Models.Useraccount
+
+@{
+    ViewData["Title"] = "EditProfile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 grid-margin ">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post" asp-action="Edit" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" asp-for="Roleid" />
+
+                            <div class="form-group">
+                                <label asp-for="Fullname" class="control-label"></label>
+                                <input asp-for="Fullname" class="form-control" />
+                                <span asp-validation-for="Fullname" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            @* hiddein *@
+                            <div class="form-group" hidden>
+                                <label asp-for="Image" class="control-label"></label>
+                                <input asp-for="Image" class="form-control" />
+                                <span asp-validation-for="Image" class="text-danger"></span>
+                            </div>
+                            @* add all the below code *@
+                            <div class="form-group" hidden>
+                                <label asp-for="UserImageFile" class="control-label"></label>
+                                <input asp-for="UserImageFile" class="form-control" />
+                                <span asp-validation-for="UserImageFile" class="file-upload-default text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"> User Image</label>
+                                <div style="display:flex">
+                                    <input asp-for="UserImageFile" name="UserImageFile" type="file" id="customFileInput" class="custom-input form-control" accept=".jpg, .jpeg, .png" hidden>
+                                    <input for="chosenFileName" name="chosenFileName" type="text" id="chosenFileName" class="file-name-display form-control" readonly >
+                                    <label asp-for="UserImageFile" class="custom-label btn btn-primary">Uppload</label>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Save Changes" class="btn btn-primary" placeholder="Save Changes" />
+                                <a asp-controller="User" asp-action="Profile" asp-route-id="@Model?.Id" class="btn btn-outline-primary">Cancle </a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

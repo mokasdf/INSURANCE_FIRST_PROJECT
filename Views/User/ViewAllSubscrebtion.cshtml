@@ -1,0 +1,87 @@
+﻿@model IEnumerable<INSURANCE_FIRST_PROJECT.Models.Subcrebtion>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_UserLayout";
+}
+
+
+
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-controller="Home" asp-action="INSURANCE">Subscribe</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Subcrebtiondate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Extra)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Subcrebtiontype)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Useraccount)
+            </th> *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subcrebtiondate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => item.Extra)
+                </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subcrebtiontype.Name)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => item.Useraccount.Id)
+                </td> *@
+                <td>
+                    @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> | *@
+                    <a  asp-action="ViewSubscrebtion" asp-route-id="@item.Id" class="btn btn-primary">Details</a> |
+                    @* <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
